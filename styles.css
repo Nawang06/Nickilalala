@@ -1,40 +1,68 @@
+/* General Styles */
 body {
-  font-family: "Lobster", cursive; /* Change to a romantic cursive font */
+  font-family: "Lobster", cursive;
   background-color: #ffdde1;
+  background: url("images/image.jpg") repeat;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   height: 100vh;
   margin: 0;
-  background: url("images/image.jpg") repeat;
   font-size: 35px;
   color: rgb(255, 0, 174);
 }
+
+/* Container Styling */
+.container {
+  width: 90%;
+  max-width: 800px;
+  height: 90%;
+  position: relative; /* For absolutely positioning the dodging button */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+
+/* Main Prompt Styling */
+.Mainprompt {
+  width: 100%;
+}
+
+/* Image Styling */
+.image {
+  height: 280px;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+}
+
+/* Headings Styling */
 .hh {
   -webkit-text-stroke: 2px #71004f;
   font-weight: 900;
+  margin: 10px 0;
 }
+
 .pp {
   -webkit-text-stroke: 2px #71004f;
   font-size: 50px;
   font-style: oblique;
   font-weight: 800;
+  margin: 10px 0 30px;
 }
 
-body .container {
-  width: 100%;
-  height: 100%;
+/* Buttons Styling */
+.buttons {
   display: flex;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: transparent;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.image {
-  height: 280px;
+  flex-wrap: wrap;
 }
 
 .buttons button {
@@ -47,28 +75,28 @@ body .container {
   font-size: 26px;
   cursor: pointer;
   position: relative;
-  font-family: "Lobster", cursive;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .buttons button:hover {
   background-color: #7c1f37;
+  transform: scale(1.1);
 }
 
-.buttons {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-}
-
-#no-button {
-  cursor: pointer;
-}
-
+/* Hidden Message Styling */
 .hidden-message {
   display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
   margin-top: 20px;
 }
 
+.hidden-message.visible {
+  display: block;
+  opacity: 1;
+}
+
+/* Optional Move Animation (if you want a quick jiggle effect) */
 .move {
   animation: moveNoMessage 0.5s linear;
 }
@@ -88,5 +116,22 @@ body .container {
   }
   100% {
     transform: translate(0, 0);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  body {
+    font-size: 28px;
+  }
+  .image {
+    height: 200px;
+  }
+  .pp {
+    font-size: 38px;
+  }
+  .buttons button {
+    font-size: 20px;
+    padding: 8px 20px;
   }
 }
