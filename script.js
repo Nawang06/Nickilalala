@@ -30,7 +30,7 @@ function showMessage(response) {
       if (!audioPlayed) {
         // Create an audio element instead of a video element
         const audioElement = document.createElement("audio");
-        audioElement.src = "./slow_motion.mp3"; // Replace with your audio source
+        audioElement.src = "./laude.mp3"; // Replace with your audio source
         audioElement.autoplay = true;
         audioElement.controls = false;
         document.body.appendChild(audioElement);
